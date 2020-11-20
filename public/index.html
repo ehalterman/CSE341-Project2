@@ -1,23 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Postal Rate Calculator</title>
+	<title>New Baby Tracker</title>
+    <link href="stylesheets/main.css" rel="stylesheet">
 </head>
+
 <body>
-	<h1>Postal Rate Calculator</h1>
-	<form action="/calculate" method="get">
-		<select name="mailType">
-			<option>Stamped Letter</option>
-			<option>Metered Letter</option>
-			<option>Large Flat Envelope</option>
-			<option>First-Class Package</option>
-		</select>
-
-		Weight(in ounces): <input type="text" name="weight">
-
-		<br><br>
-		<input type="submit" value="Get Rate">
-
-	</form>
+	<h1>Baby Tracker</h1>
+	<a id="addBaby" onclick="toggleBabyMenu()">Add Baby</a>
+	<div class="babyInput">
+		<form action="/newBaby" method="get">
+			<label>Baby's First Name:</label>
+			<input type="text" name="first_name" required><br>
+			<label>Baby's Last Name:</label>
+			<input type="text" name="last_name"><br>
+			<label>Baby's Birth Date</label>
+			<input type="date" name="dob">
+			<br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<script>
+		function toggleBabyMenu() {
+    document.getElementsByClassName("babyInput")[0].classList.toggle("responsive");
+    }
+	</script>
 </body>
+
 </html>

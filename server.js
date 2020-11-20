@@ -16,7 +16,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-app.get('/getPerson', handlePerson);
+app.get('/newBaby', newBaby);
 
 // start the server listening
 app.listen(port, function () {
@@ -24,12 +24,12 @@ app.listen(port, function () {
 });
 
 //
-function handlePerson(req, res) {
+function newBaby(req, res) {
   const id = Number(req.query.id);
-  getPerson(res, id);
+  handleBaby(res, id);
 }
 
-function getPerson(res, id) {
+function handleBaby(res, id) {
   pg.connect(conString, function(err, client, done) {
     if (err) {
       return console.error('error fetching client from pool', err);
