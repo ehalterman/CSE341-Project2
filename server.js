@@ -18,9 +18,9 @@ app.use(express.static(__dirname + '/public'));
 // app.get('/newBaby', newBaby);
 
 // // start the server listening
-// app.listen(port, function () {
-//   console.log('Node app is running on port', port);
-// });
+app.listen(port, function () {
+  console.log('Node app is running on port', port);
+});
 
 // //
 // function newBaby(req, res) {
