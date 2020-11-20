@@ -16,32 +16,32 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 
-app.get('/newBaby', newBaby);
+// app.get('/newBaby', newBaby);
 
-// start the server listening
-app.listen(port, function () {
-  console.log('Node app is running on port', port);
-});
+// // start the server listening
+// app.listen(port, function () {
+//   console.log('Node app is running on port', port);
+// });
 
-//
-function newBaby(req, res) {
-  const id = Number(req.query.id);
-  handleBaby(res, id);
-}
+// //
+// function newBaby(req, res) {
+//   const id = Number(req.query.id);
+//   handleBaby(res, id);
+// }
 
-function handleBaby(res, id) {
-  pg.connect(conString, function(err, client, done) {
-    if (err) {
-      return console.error('error fetching client from pool', err);
-    }
-    console.log("connected to database");
-    client.query(`SELECT * FROM Person WHERE id = ${id}`, function(err, result) {
-      done();
-      if (err) {
-        return console.error('error running query', err);
-      }
-      res.send(result);
-      console.log(result);
-    });
-  });
-}
+// function handleBaby(res, id) {
+//   pg.connect(conString, function(err, client, done) {
+//     if (err) {
+//       return console.error('error fetching client from pool', err);
+//     }
+//     console.log("connected to database");
+//     client.query(`SELECT * FROM Person WHERE id = ${id}`, function(err, result) {
+//       done();
+//       if (err) {
+//         return console.error('error running query', err);
+//       }
+//       res.send(result);
+//       console.log(result);
+//     });
+//   });
+// }
