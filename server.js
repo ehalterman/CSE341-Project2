@@ -42,8 +42,8 @@ function newBaby(req, response) {
           data: error
         });
       } else {
-        const person = result[0];
-        response.status(200).json(person);
+        const baby = result[0];
+        response.status(200).json(baby);
       }
     });
   }
@@ -51,7 +51,7 @@ function newBaby(req, response) {
     function handleBaby (first_name, last_name, dob, callback) {
       console.log("inserting baby: " + first_name);
       
-      const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( ${first_name}, ${last_name}, ${dob}`;
+      const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( "${first_name}", "${last_name}", ${dob}`;
       pool.query(sql, function (err, result) {
           if (err) {
             console.log("Error in query: ");
