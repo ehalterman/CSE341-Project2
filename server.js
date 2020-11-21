@@ -26,7 +26,7 @@ app.listen(app.get('port'), function () {
 });
 
 //
-function newBaby(req, res) {
+function newBaby(req, response) {
   const first_name = req.query.first_name;
   const last_name = req.query.last_name;
   const dob = Date(req.query.dob);
