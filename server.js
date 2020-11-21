@@ -18,13 +18,13 @@ app.use(express.static(__dirname + '/public'));
 //app.set('views', __dirname + '/views');
 //app.set('view engine', 'ejs');
 
-app.get('/newBaby', newBaby);
+
 
 // // start the server listening
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
-
+app.get('/newBaby', newBaby);
 //
 function newBaby(req, response) {
   const first_name = req.query.first_name;
