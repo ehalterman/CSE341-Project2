@@ -1,10 +1,14 @@
 const express = require('express')
 const app = express();
-var { Pool } = require('pg');
+var {
+  Pool
+} = require('pg');
 var connectionString = process.env.DATABASE_URL;
 
 
-const pool = new Pool ({connectionString: connectionString});
+const pool = new Pool({
+  connectionString: connectionString
+});
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -21,25 +25,39 @@ app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
 
-// //
-// function newBaby(req, res) {
-//   const id = Number(req.query.id);
-//   handleBaby(res, id);
-// }
+//
+function newBaby(req, res) {
+  const first_name = req.query.first_name;
+  const last_name = req.query.last_name;
+  const dob = Date(req.query.dob);
 
-// function handleBaby(res, id) {
-//   pg.connect(conString, function(err, client, done) {
-//     if (err) {
-//       return console.error('error fetching client from pool', err);
-//     }
-//     console.log("connected to database");
-//     client.query(`SELECT * FROM Person WHERE id = ${id}`, function(err, result) {
-//       done();
-//       if (err) {
-//         return console.error('error running query', err);
-//       }
-//       res.send(result);
-//       console.log(result);
-//     });
-//   });
-// }
+  handleBaby(first_name, last_name, dob, function (error, result) {
+      // This is the callback function that will be called when the DB is done.
+      // The job here is just to send it back.
+
+      // Make sure we got a row with the person, then prepare JSON to send back
+      if (error || result == null || result.length != 1) {
+        response.status(500).json({
+          success: false,
+          data: error
+        });
+      } else {
+        const person = result[0];
+        response.status(200).json(person);
+      }
+    });
+  }
+
+    function handleBaby (first_name, last_name, dob, callback) {
+      console.log("inserting baby: " + first_name);
+      
+      const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( ${first_name}, ${last_name}, ${dob}`;
+      pool.query(sql, function (err, result) {
+          if (err) {
+            console.log("Error in query: ");
+            console.log(err);
+          }
+          console.log("Found Result: " + JSON.stringify(result.rows));
+          callback(null, result.rows);
+        });
+      }
