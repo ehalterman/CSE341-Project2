@@ -38,4 +38,5 @@ form {
 .toggleButton {
   border: none;
   background-color: navy;
+  color: white;
 }
