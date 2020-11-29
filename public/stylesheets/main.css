@@ -35,3 +35,7 @@ form {
 #toggleBaby, #toggleFeed, #toggleDiaper {
   display: none;
 }
+.toggleButton {
+  border: none;
+  background-color: navy;
+}
