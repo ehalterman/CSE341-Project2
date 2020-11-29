@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
-var { Pool } = require('pg');
-var connectionString = process.env.DATABASE_URL;
+const { Pool } = require('pg');
+const connectionString = process.env.DATABASE_URL;
 
 
 const pool = new Pool({
@@ -15,14 +15,13 @@ app.use(express.static(__dirname + '/public'));
 // views is directory for all template files
 //app.set('views', __dirname + '/views');
 //app.set('view engine', 'ejs');
-
+app.post('/newBaby', newBaby);
 
 
 // // start the server listening
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
-app.post('/newBaby', newBaby);
 //
 function newBaby(req, response) {
   const first_name = req.body.first_name;
