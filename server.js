@@ -24,7 +24,7 @@ app.use(express.static(__dirname + '/public'));
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
-app.get('/newBaby', newBaby);
+app.post('/newBaby', newBaby);
 //
 function newBaby(req, response) {
   const first_name = req.query.first_name;
@@ -51,7 +51,7 @@ function newBaby(req, response) {
     function handleBaby (first_name, last_name, dob, callback) {
       console.log("inserting baby: " + first_name);
       
-      const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}'`;
+      const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}')`;
       pool.query(sql, function (err, result) {
           if (err) {
             console.log("Error in query: ");

@@ -14,7 +14,7 @@
 	<button class="toggleButton" onclick="toggleDiaper()">Log Diaper</button>
 </div>
 	<div id="toggleBaby">
-		<form action="/newBaby" method="get">
+		<form action="/newBaby" method="post">
 			<fieldset>
 				<legend>Baby</legend>
 			<label>Baby's First Name:</label>
@@ -85,7 +85,7 @@ function toggleFeed(){
 function toggleDiaper() {
 	var toggleDiaper = document.getElementById("toggleDiaper");
 	if (toggleDiaper.style.display === "block") {
-		toggleDiaper.style.display = "nonce";
+		toggleDiaper.style.display = "none";
 	} else {
 		toggleDiaper.style.display = "block";
 	}
