@@ -7,7 +7,7 @@ body {
   margin: 0%, 25%;
 }
 fieldset {
-  border-color: coral;
+  border-color: #ff6680;
 }
 h1, legend{
   font-family: 'Handlee', cursive;
@@ -15,8 +15,8 @@ h1, legend{
 label, option, input {
   font-family: 'Varela Round', sans-serif;
 }
-button {
-  background-color: coral;
+input.btn {
+  background-color: #ff6680;
 }
 form {
   text-align: right;
