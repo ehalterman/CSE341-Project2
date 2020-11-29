@@ -8,9 +8,11 @@
 
 <body>
 	<h1>Baby Tracker</h1>
-	<a id="addBaby" onclick="toggleBabyMenu()">Add Baby</a>
+	
 	<div class="babyInput">
 		<form action="/newBaby" method="get">
+			<fieldset>
+				<legend>Add Baby</legend>
 			<label>Baby's First Name:</label>
 			<input type="text" name="first_name" required><br>
 			<label>Baby's Last Name:</label>
@@ -19,6 +21,7 @@
 			<input type="date" name="dob">
 			<br>
 			<input class="btn" type="submit" value="Submit">
+			</fieldset>
 		</form>
 	</div>
 	<div>

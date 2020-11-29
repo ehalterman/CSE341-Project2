@@ -2,8 +2,8 @@
 
 body {
   background-color: navy;
-  color: white;
-  text-align: center;
+  color: #c9c9c9;
+  text-align: right;
   margin: 0%, 25%;
 }
 fieldset {
@@ -12,13 +12,20 @@ fieldset {
 h1, legend{
   font-family: 'Handlee', cursive;
 }
+h1 {
+  font-size: 40px;
+}
+legend {
+  font-size: 36px;
+}
 label, option, input {
   font-family: 'Varela Round', sans-serif;
 }
-input.btn {
+.btn {
   background-color: #ff6680;
 }
 form {
+  font-size: 24px;
   text-align: right;
-  margin: 10%;
+  margin: 0%, 20%;
 }
