@@ -9,7 +9,7 @@
 <body>
 	<h1>Baby Tracker</h1>
 	
-	<button class="toggleButton" onclick="toggleMenu()">Add Baby</button>
+	<button class="toggleButton" onclick="toggleBaby()">Add Baby</button>
 	<div id="toggleBaby">
 		<form action="/newBaby" method="get">
 			<fieldset>
@@ -24,7 +24,7 @@
 			</fieldset>
 		</form>
 	</div>
-	<button class="toggleButton" onclick="toggleMenu()">Log Feed</button>
+	<button class="toggleButton" onclick="toggleFeed()">Log Feed</button>
 	<div id="toggleFeed">
 		<form action="/logFeed" method="post">
 			<fieldset>
@@ -40,7 +40,7 @@
 			</fieldset>
 		</form>
 	</div>
-	<button class="toggleButton" onclick="toggleMenu()">Log Diaper</button>
+	<button class="toggleButton" onclick="toggleDiaper()">Log Diaper</button>
 	<div id="toggleDiaper">
 		<form action="/logDiaper" method="post">
 			<fieldset>
@@ -57,19 +57,23 @@
 		</form>
 	</div>
 	<script>
-		function toggleMenu() {
+		function toggleBaby() {
 	var toggleBaby = document.getElementById("toggleBaby");
 	if (toggleBaby.style.display === "none") {
 		toggleBaby.style.display = "block";
 	} else {
 		toggleBaby.style.display = "none";
 	}
+}
+function toggleFeed(){
 	var toggleFeed = document.getElementById("toggleFeed");
 	if (toggleFeed.style.display === "none") {
 		toggleFeed.style.display = "block";
 	} else {
 		toggleFeed.style.display = "none";
 	}
+}
+function toggleDiaper() {
 	var toggleDiaper = document.getElementById("toggleDiaper");
 	if (toggleDiaper.style.display === "none") {
 		toggleDiaper.style.display = "block";
