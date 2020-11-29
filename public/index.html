@@ -21,6 +21,33 @@
 			<input type="submit" value="Submit">
 		</form>
 	</div>
+	<div>
+		<form action="/logFeed" method="post">
+			<fieldset>
+				<legend>Feeding</legend>
+				<label>Start Time</label>
+				<input type="datetime" name="start_time" required><br>
+				<select name="amount">
+					<option>Full Feed</option>
+					<option>Half Feed</option>
+					<option>Snack Feed</option>
+				</select>
+				<input type="submit" value="Log Feed">
+			</fieldset>
+		</form>
+		<form action="/logDiaper" method="post">
+			<fieldset>
+				<legend>Diaper</legend>
+				<label>Time:</label>
+				<input type="datetime" name="change_time" required><br>
+				<select name="change_type">
+					<option>Wet</option>
+					<option>Messy</option>
+				</select>
+				<input type="submit" value="Log Diaper">
+			</fieldset>
+		</form>
+	</div>
 	<script>
 		function toggleBabyMenu() {
     document.getElementsByClassName("babyInput")[0].classList.toggle("responsive");

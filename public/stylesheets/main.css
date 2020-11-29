@@ -28,3 +28,9 @@
 .responsive {
   display: none;
 }
+main {
+  background-color: navy;
+}
+fieldset {
+  border-color: coral;
+}
