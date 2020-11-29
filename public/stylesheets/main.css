@@ -32,3 +32,6 @@ form {
   font-size: 24px;
   text-align: right;
 }
+#toggleBaby, #toggleFeed, #toggleDiaper {
+  display: none;
+}

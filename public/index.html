@@ -9,10 +9,10 @@
 <body>
 	<h1>Baby Tracker</h1>
 	
-	<div class="babyInput">
+	<h2 onclick="toggleMenu">Add Baby</h2>
+	<div id="toggleBaby">
 		<form action="/newBaby" method="get">
 			<fieldset>
-				<legend>Add Baby</legend>
 			<label>Baby's First Name:</label>
 			<input type="text" name="first_name" required><br>
 			<label>Baby's Last Name:</label>
@@ -24,10 +24,10 @@
 			</fieldset>
 		</form>
 	</div>
-	<div>
+	<h2 onclick="toggleMenu">Log Feed</h2>
+	<div id="toggleFeed">
 		<form action="/logFeed" method="post">
 			<fieldset>
-				<legend>Feeding</legend>
 				<label>Start Time</label>
 				<input type="datetime-local" name="start_time" required><br>
 				<label>Feed Amount:</label>
@@ -39,6 +39,9 @@
 				<input class="btn" type="submit" value="Log Feed">
 			</fieldset>
 		</form>
+	</div>
+	<h2 onclick="toggleMenu">Log Diaper</h2>
+	<div id="toggleDiaper">
 		<form action="/logDiaper" method="post">
 			<fieldset>
 				<legend>Diaper</legend>
@@ -54,8 +57,25 @@
 		</form>
 	</div>
 	<script>
-		function toggleBabyMenu() {
-    document.getElementsByClassName("babyInput")[0].classList.toggle("responsive");
+		function toggleMenu() {
+	var toggleBaby = document.getElementsId("toggleBaby");
+	if (toggleBaby.style.display === "none") {
+		toggleBaby.style.display = "block";
+	} else {
+		toggleBaby.style.display = "none";
+	}
+	var toggleFeed = document.getElementsId("toggleFeed");
+	if (toggleFeed.style.display === "none") {
+		toggleFeed.style.display = "block";
+	} else {
+		toggleFeed.style.display = "none";
+	}
+	var toggleDiaper = document.getElementsId("toggleDiaper");
+	if (toggleDiaper.style.display === "none") {
+		toggleDiaper.style.display = "block";
+	} else {
+		toggleDiaper.style.display = "none";
+	}
     }
 	</script>
 </body>
