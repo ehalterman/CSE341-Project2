@@ -2,6 +2,9 @@
 
 body {
   background-color: navy;
+  color: white;
+  text-align: center;
+  margin: 0%, 25%;
 }
 fieldset {
   border-color: coral;
@@ -11,4 +14,7 @@ h1, legend{
 }
 label, option, input {
   font-family: 'Varela Round', sans-serif;
+}
+button {
+  background-color: coral;
 }
