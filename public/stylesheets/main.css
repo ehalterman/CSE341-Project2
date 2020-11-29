@@ -18,3 +18,7 @@ label, option, input {
 button {
   background-color: coral;
 }
+form {
+  text-align: right;
+  margin: 10%;
+}
