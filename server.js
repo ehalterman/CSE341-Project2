@@ -24,7 +24,7 @@ app.use(express.static(__dirname + '/public'));
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
-app.post('/newBaby', newBaby);
+app.get('/newBaby', newBaby);
 //
 function newBaby(req, response) {
   const first_name = req.query.first_name;
