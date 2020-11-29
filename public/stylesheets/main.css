@@ -38,11 +38,13 @@ form {
   display: none;
 }
 .toggleButton {
-  font-size: 20px;
+  font-size: 24px;
   background-color: #1b2257;
   color: #c9c9c9;
   border-color: #ff6680;
-  padding: 5px;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px;
 }
 #buttons {
   display: flex;
