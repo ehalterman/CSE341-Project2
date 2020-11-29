@@ -1,8 +1,6 @@
 const express = require('express')
 const app = express();
-var {
-  Pool
-} = require('pg');
+var { Pool } = require('pg');
 var connectionString = process.env.DATABASE_URL;
 
 
@@ -24,12 +22,12 @@ app.use(express.static(__dirname + '/public'));
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
 });
-app.get('/newBaby', newBaby);
+app.post('/newBaby', newBaby);
 //
 function newBaby(req, response) {
-  const first_name = req.query.first_name;
-  const last_name = req.query.last_name;
-  const dob = Date(req.query.dob);
+  const first_name = req.body.first_name;
+  const last_name = req.body.last_name;
+  const dob = Date(req.body.dob);
 
   handleBaby(first_name, last_name, dob, function (error, result) {
       // This is the callback function that will be called when the DB is done.
