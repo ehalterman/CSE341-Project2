@@ -10,6 +10,9 @@
 	<h1>Baby Tracker</h1>
 	
 	<button class="toggleButton" onclick="toggleBaby()">Add Baby</button>
+	<button class="toggleButton" onclick="toggleFeed()">Log Feed</button>
+	<button class="toggleButton" onclick="toggleDiaper()">Log Diaper</button>
+
 	<div id="toggleBaby">
 		<form action="/newBaby" method="get">
 			<fieldset>
@@ -24,7 +27,6 @@
 			</fieldset>
 		</form>
 	</div>
-	<button class="toggleButton" onclick="toggleFeed()">Log Feed</button>
 	<div id="toggleFeed">
 		<form action="/logFeed" method="post">
 			<fieldset>
@@ -40,7 +42,6 @@
 			</fieldset>
 		</form>
 	</div>
-	<button class="toggleButton" onclick="toggleDiaper()">Log Diaper</button>
 	<div id="toggleDiaper">
 		<form action="/logDiaper" method="post">
 			<fieldset>

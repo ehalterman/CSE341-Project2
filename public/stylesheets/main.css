@@ -36,7 +36,11 @@ form {
   display: none;
 }
 .toggleButton {
+  display: flex;
   border: none;
+  font-size: 20px;
   background-color: #3f3675;
   color: #c9c9c9;
+  border-color: #ff6680;
+  padding: 5px;
 }
