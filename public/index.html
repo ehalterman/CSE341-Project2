@@ -30,11 +30,12 @@
 				<legend>Feeding</legend>
 				<label>Start Time</label>
 				<input type="datetime-local" name="start_time" required><br>
+				<label>Feed Amount:</label>
 				<select name="amount" required>
 					<option>Full Feed</option>
 					<option>Half Feed</option>
 					<option>Snack Feed</option>
-				</select>
+				</select><br>
 				<input class="btn" type="submit" value="Log Feed">
 			</fieldset>
 		</form>
@@ -43,10 +44,11 @@
 				<legend>Diaper</legend>
 				<label>Time:</label>
 				<input type="datetime-local" name="change_time" required><br>
+				<label>Diaper Type:</label>
 				<select name="change_type" required>
 					<option>Wet</option>
 					<option>Messy</option>
-				</select>
+				</select><br>
 				<input class="btn" type="submit" value="Log Diaper">
 			</fieldset>
 		</form>
