@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&family=Varela+Round&display=swap');
 
 body {
-  background-color: #3f3675;
+  background-color: #1b2257;
   color: #c9c9c9;
   text-align: center;
   margin: 0 25%;
@@ -39,7 +39,7 @@ form {
 }
 .toggleButton {
   font-size: 20px;
-  background-color: #3f3675;
+  background-color: #1b2257;
   color: #c9c9c9;
   border-color: #ff6680;
   padding: 5px;
