@@ -10,7 +10,7 @@ const pool = new Pool({
   connectionString: connectionString
 });
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', process.env.PORT);
 
 app.use(express.static(__dirname + '/public'));
 
