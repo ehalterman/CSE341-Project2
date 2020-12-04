@@ -37,30 +37,30 @@ app.listen(app.get('port'), function () {
   handleBaby(first_name, last_name, dob, function (error, result) {
       // This is the callback function that will be called when the DB is done.
       // The job here is just to send it back.
-console.log(first_name + last_name + dob);
+
       // Make sure we got a row with the person, then prepare JSON to send back
-      // if (error || result == null || result.length != 1) {
-      //   response.status(500).json({
-      //     success: false,
-      //     data: error
-      //   });
-      // } else {
-      //   const baby = result[0];
-      //   response.status(200).json(baby);
-      // }
+      if (error || result == null || result.length != 1) {
+        response.status(500).json({
+          success: false,
+          data: error
+        });
+      } else {
+        const baby = result[0];
+        response.status(200).json(baby);
+      }
     });
   }
 
-//     function handleBaby (first_name, last_name, dob, callback) {
-//       console.log("inserting baby: " + first_name);
+    function handleBaby (first_name, last_name, dob, callback) {
+      console.log("inserting baby: " + first_name);
       
-//       const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}')`;
-//       pool.query(sql, function (err, result) {
-//           if (err) {
-//             console.log("Error in query: ");
-//             console.log(err);
-//           }
-//           console.log("Found Result: " + JSON.stringify(result.rows));
-//           callback(null, result.rows);
-//         });
-      //}
+      //const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}')`;
+      // pool.query(sql, function (err, result) {
+      //     if (err) {
+      //       console.log("Error in query: ");
+      //       console.log(err);
+      //     }
+      //     console.log("Found Result: " + JSON.stringify(result.rows));
+      //     callback(null, result.rows);
+      //   });
+      }
