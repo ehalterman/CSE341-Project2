@@ -55,12 +55,13 @@ app.listen(app.get('port'), function () {
       console.log("inserting baby: " + first_name);
       
       const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}')`;
-      pool.query(sql, function (err, result) {
-          if (err) {
-            console.log("Error in query: ");
-            console.log(err);
-          }
-          console.log("Found Result: " + JSON.stringify(result.rows));
-          callback(null, result.rows);
+      pool.query(sql)
+        .then((res) => {
+          console.log(res);
+          pool.end();
+        })
+        .catch((err) => {
+          console.log(err);
+          pool.end();
         });
       }
