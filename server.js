@@ -54,13 +54,13 @@ app.listen(app.get('port'), function () {
     function handleBaby (first_name, last_name, dob, callback) {
       console.log("inserting baby: " + first_name);
       
-      //const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}')`;
-      // pool.query(sql, function (err, result) {
-      //     if (err) {
-      //       console.log("Error in query: ");
-      //       console.log(err);
-      //     }
-      //     console.log("Found Result: " + JSON.stringify(result.rows));
-      //     callback(null, result.rows);
-      //   });
+      const sql = `INSERT INTO Baby (first_name, last_name, dob) VALUES ( '${first_name}', '${last_name}', '${dob}')`;
+      pool.query(sql, function (err, result) {
+          if (err) {
+            console.log("Error in query: ");
+            console.log(err);
+          }
+          console.log("Found Result: " + JSON.stringify(result.rows));
+          callback(null, result.rows);
+        });
       }
