@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express')
 const app = express();
 const { Pool } = require('pg');
@@ -17,7 +18,7 @@ app.use(express.urlencoded({extended: true,})
 // views is directory for all template files
 //app.set('views', __dirname + '/views');
 //app.set('view engine', 'ejs');
-//app.post('/newBaby', newBaby);
+app.post('/newBaby', newBaby);
 // // start the server listening
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
@@ -28,7 +29,9 @@ app.listen(app.get('port'), function () {
 // 
 
 
-// function newBaby(req, response) {
+ function newBaby(req, res) {
+  console.log(req.body.first_name)
+ }
 //   const input {first_name, last_name, dob} = req.body
 
 //   handleBaby(first_name, last_name, dob, function (error, result) {
