@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: true,})
 // views is directory for all template files
 //app.set('views', __dirname + '/views');
 //app.set('view engine', 'ejs');
-app.post('/newBaby', newBaby);
+//app.post('/newBaby', newBaby);
 // // start the server listening
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'));
@@ -25,16 +25,7 @@ app.listen(app.get('port'), function () {
 
 
 //
-const newBaby = (request, response) => {
-  const {first_name, last_name, dob} = request.body
-
-  pool.query ('INSERT INTO Baby (first_name, last_name, dob) VALUES ( $1, $2, $3)', [first_name, last_name, dob], (error, results) => {
-    if (error) {
-      throw error
-    }
-    response.status(201).send(`Baby added with ID: $result.insertId}`)
-  })
-}
+// 
 
 
 // function newBaby(req, response) {
