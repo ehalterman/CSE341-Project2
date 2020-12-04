@@ -46,7 +46,7 @@ app.listen(app.get('port'), function () {
         });
       } else {
         const baby = result[0];
-        response.status(200).json(baby);
+        response.status(204).json(baby);
       }
     });
   }
