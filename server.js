@@ -30,26 +30,26 @@ app.listen(app.get('port'), function () {
 
 
  function newBaby(req, res) {
-  console.log(req.body.first_name)
- }
-//   const input {first_name, last_name, dob} = req.body
-
-//   handleBaby(first_name, last_name, dob, function (error, result) {
-//       // This is the callback function that will be called when the DB is done.
-//       // The job here is just to send it back.
-
-//       // Make sure we got a row with the person, then prepare JSON to send back
-//       if (error || result == null || result.length != 1) {
-//         response.status(500).json({
-//           success: false,
-//           data: error
-//         });
-//       } else {
-//         const baby = result[0];
-//         response.status(200).json(baby);
-//       }
-//     });
-//   }
+  const first_name = req.body.first_name;
+  const last_name = req.body.last_name;
+  const dob = req.body.dob;
+ 
+  handleBaby(first_name, last_name, dob, function (error, result) {
+      // This is the callback function that will be called when the DB is done.
+      // The job here is just to send it back.
+console.log(first_name + last_name + dob);
+      // Make sure we got a row with the person, then prepare JSON to send back
+      // if (error || result == null || result.length != 1) {
+      //   response.status(500).json({
+      //     success: false,
+      //     data: error
+      //   });
+      // } else {
+      //   const baby = result[0];
+      //   response.status(200).json(baby);
+      // }
+    });
+  }
 
 //     function handleBaby (first_name, last_name, dob, callback) {
 //       console.log("inserting baby: " + first_name);
