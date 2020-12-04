@@ -21,8 +21,8 @@ app.post('/newBaby', newBaby);
 
 
 // // start the server listening
-app.listen(app.get('port'), function () {
-  console.log('Node app is running on port', app.get('port'));
+app.listen(app.post('port'), function () {
+  console.log('Node app is running on port', app.post('port'));
 });
 //
 const newBaby = (request, response) => {
