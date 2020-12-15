@@ -15,11 +15,12 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true,})
 )
 app.get('/getdata', function(request, response){
-  client.query("SELECT * FROM feed", function(err, results){
+  client.query("SELECT * FROM Feed", function(err, results){
     if (err){
     throw err;
   }
   response.send(results.row);
+  console.log(results.row);
 });
 });
 // views is directory for all template files
