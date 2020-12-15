@@ -14,7 +14,14 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json())
 app.use(express.urlencoded({extended: true,})
 )
-
+app.get('/getdata', function(request, response){
+  client.query("SELECT * FROM feed", function(err, results){
+    if (err){
+    throw err;
+  }
+  response.send(results.row);
+});
+});
 // views is directory for all template files
 //app.set('views', __dirname + '/views');
 //app.set('view engine', 'ejs');

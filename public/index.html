@@ -66,6 +66,9 @@
 
 
 	<script>
+		$get.JSON('/getdata', function(response) {
+			consol.log(response);
+		});
 		function toggleBaby() {
 	var toggleBaby = document.getElementById("toggleBaby");
 	if (toggleBaby.style.display === "block") {
