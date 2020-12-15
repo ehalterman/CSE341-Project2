@@ -1,8 +1,10 @@
 const { response } = require('express');
 const express = require('express')
 const app = express();
+var squel=require('squel');
 const { Pool } = require('pg');
 const connectionString = process.env.DATABASE_URL;
+var outputJSON = [];
 
 const pool = new Pool({
   connectionString: connectionString
@@ -14,15 +16,32 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.json())
 app.use(express.urlencoded({extended: true,})
 )
-app.get('/getdata', function(request, response){
-  client.query("SELECT * FROM Feed", function(err, results){
-    if (err){
-    throw err;
+client.connect(function (err, data){
+  if(err) console.log("'Error connecting'", err);
+  else{
+    var query = squel.select().field("*").from('"Feed"');
+    client.query(query.toString(), function(err,res){
+      if (err) throw err;
+      var x = JSON.stringify(res);
+      var y = x.split (",")
+      console.log(y.length);
+      for (var i=0; i<y.length; i++){
+        if(y[i].indexOf('"*":')>0){
+          console.log(y[i])
+          outputJSON.push(y[i]);
+        }
+      };
+    });
   }
-  response.send(results.row);
-  console.log(results.row);
 });
-});
+// app.get('/getdata', function(request, response){
+//   client.query("SELECT * FROM Feed", function(err, results){
+//     if (err){
+//     throw err;
+//   }
+//   response.send(results.row);
+// });
+// });
 // views is directory for all template files
 //app.set('views', __dirname + '/views');
 //app.set('view engine', 'ejs');
