@@ -3,10 +3,13 @@
 
 <head>
 	<title>Baby Tracker</title>
-    <link href="stylesheets/main.css" rel="stylesheet">
+	<link href="stylesheets/main.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="baby.js"></script>
 </head>
 
-<body>
+<body >
+	
 	<h1>Baby Tracker</h1>
 	<div id="buttons">
 	<button class="toggleButton" onclick="toggleBaby()">Add Baby</button>
@@ -14,7 +17,7 @@
 	<button class="toggleButton" onclick="toggleDiaper()">Log Diaper</button>
 </div>
 	<div id="toggleBaby">
-		<form action="/newBaby" method="post">
+		<form id="newBaby" action="/newBaby" method="post">
 			<fieldset>
 				<legend>Baby</legend>
 			<label>Baby's First Name:</label>
@@ -29,7 +32,7 @@
 		</form>
 	</div>
 	<div id="toggleFeed">
-		<form action="/logFeed" method="post">
+		<form id="newFeed" action="/newFeed" method="post">
 			<fieldset>
 				<legend>Feed</legend>
 				<label>Start Time</label>
@@ -40,6 +43,8 @@
 					<option>Half Feed</option>
 					<option>Snack Feed</option>
 				</select><br>
+				<label> Baby ID</label>
+				<input type="number" name="baby_id" required><br>
 				<input class="btn" type="submit" value="Log Feed">
 			</fieldset>
 		</form>
@@ -55,6 +60,8 @@
 					<option>Wet</option>
 					<option>Messy</option>
 				</select><br>
+				<label> Baby ID</label>
+				<input type="number" name="baby_id" required><br>
 				<input class="btn" type="submit" value="Log Diaper">
 			</fieldset>
 		</form>
@@ -65,35 +72,8 @@
 	</div>
 
 
-	<script>
-		$get.JSON('/getdata', function(response) {
-			console.log(response);
-		});
-		function toggleBaby() {
-	var toggleBaby = document.getElementById("toggleBaby");
-	if (toggleBaby.style.display === "block") {
-		toggleBaby.style.display = "none";
-	} else {
-		toggleBaby.style.display = "block";
-	}
-}
-function toggleFeed(){
-	var toggleFeed = document.getElementById("toggleFeed");
-	if (toggleFeed.style.display === "block") {
-		toggleFeed.style.display = "none";
-	} else {
-		toggleFeed.style.display = "block";
-	}
-}
-function toggleDiaper() {
-	var toggleDiaper = document.getElementById("toggleDiaper");
-	if (toggleDiaper.style.display === "block") {
-		toggleDiaper.style.display = "none";
-	} else {
-		toggleDiaper.style.display = "block";
-	}
-    }
-	</script>
+	
+	
 </body>
 
 </html>

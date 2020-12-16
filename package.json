@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "pg": "^8.5.1"
+    "jquery": "^3.5.1",
+    "pg": "^8.5.1",
+    "react-scripts": "^3.4.1"
   },
   "devDependencies": {},
   "description": ""
